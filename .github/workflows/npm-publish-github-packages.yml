@@ -49,6 +49,9 @@ jobs:
       - name: Changing Directory
         run: |
           cd dist/lib-ghr
-      - run: npm publish
+      - name: Publish To Github
+        run: |
+          npm config set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN }}
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
