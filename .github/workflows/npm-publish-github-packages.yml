@@ -21,34 +21,11 @@ jobs:
       - run: npm ci
       - name: Build Angular Project
         run: ng build lib-ghr
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: build-artifacts
-          path: dist/
-
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18.17.1
-          registry-url: https://npm.pkg.github.com/
-      - name: Configure npm registry for GitHub Packages
-        run: npm config set registry https://npm.pkg.github.com/
-      - name: Download Artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: build-artifacts
-          path: dist
       - name: List Files in dist
         run: ls -R dist
       - name: semantic-release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: npx semantic-release
+
+
