@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <p>
-      lib-ghr works!
+      lib-ghr works fine!
     </p>
   `,
   styles: ``
