@@ -1,6 +1,9 @@
 {
-  "name": "angular-lib-ghr",
+  "name": "@irostom/angular-lib-ghr",
   "version": "0.0.0",
+  "publishConfig": {
+    "@irostom:registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
