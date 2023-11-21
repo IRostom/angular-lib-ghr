@@ -11,5 +11,9 @@
   "sideEffects": false,
   "publishConfig": {
     "@irostom:registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IRostom/angular-lib-ghr"
   }
 }
