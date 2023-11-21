@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18.17.1
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
       - run: npm ci
       - name: Build Angular Project
         run: ng build --prod
