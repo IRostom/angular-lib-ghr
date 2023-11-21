@@ -49,6 +49,6 @@ jobs:
       - name: List Files in dist
         run: ls -R dist
       - name: semantic-release
-        run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: npx semantic-release
